@@ -1,0 +1,40 @@
+header.header
+	.container
+		button.logo 
+			img(src="./resources/icons/svg_1.svg")
+			img(src="./resources/icons/svg_2.svg")._hide
+			
+		a(href="http://45.76.38.211:5000/game" class="lng-btn_game").btn Game
+		
+		.header__block
+			.page-btns
+				a(href="#start" class="lng-btn_home").btn.page-btns_home Back Home
+				a(href="#start" class="lng-btn_lore").btn.page-btns_lore Lore
+				a(href="#start" class="lng-btn_bestiary").btn.page-btns_bestiary bestiary
+				
+			nav.nav
+				div(class="lng-btn_nav").btn.nav__title navigation
+				ul.nav__list
+					each el in navs
+						li.nav__el
+							a(href=`#${el.url}` class=`nav__link lng-btn_${el.text}`)=el.text
+			.header__box
+				.btns-lang
+					button(class="btns-lang__select")
+						+icon('en')
+					ul.btns-lang__list
+						li(class="lng-btn" data-lang="en").btns-lang__el
+							button
+								+icon('en')
+							span en
+						li(class="lng-btn" data-lang="ru").btns-lang__el
+							button
+								+icon('ru')
+							span ru
+				.raq.btn
+					+svg('q')
+					+svg('FAQ')
+			include ./base-page/s_intro/socials.pug
+
+		.hamburger
+			span.hamburger__line

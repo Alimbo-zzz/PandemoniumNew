@@ -1,0 +1,38 @@
+section.s_cards
+	.container
+		h2(class="lng-s_card_title_1").title 1-th pack
+
+		.splide#slider-cards_1
+			.splide__track
+				ul.splide__list
+					each el in [1,2,3,4,5]
+						li.splide__slide
+							.card
+								button.flip
+								.front
+									img(src=`./assets/images/pack_1/${el}.png`)
+								.back
+									img(src=`./assets/images/pack_1/${el}.png`)
+									.back__block
+										h5.title name
+										p.text.scroll_1 content 
+		.hr
+
+		h2.title(class="lng-s_card_title_2") 2-th pack
+
+		.splide#slider-cards_2
+			.splide__track
+				ul.splide__list
+					each el in [1,2,3,4,5]
+						li.splide__slide
+							.card
+								button.flip
+								.front
+									img(src=`./assets/images/pack_2/${el}.png`)
+								.back
+									img(src=`./assets/images/pack_2/${el}.png`)
+									.back__block
+										h5.title name
+										p.text.scroll_1 content
+
+		.hr

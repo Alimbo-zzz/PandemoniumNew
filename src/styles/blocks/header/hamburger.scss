@@ -1,0 +1,52 @@
+
+.hamburger{
+	display: none;
+	padding: .5em;
+	width: 4em;height: 4em;
+	min-width: 4em; min-height: 4em;
+	border: 4px solid $blue;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background-color: #fff;
+	border-radius: 50%;
+	transition: 0.3s;
+	z-index: 100;
+
+	&._active{
+		.hamburger__line{
+			transform: translateY(0) rotate(45deg);
+			&::before{opacity: 0;}
+			&::after{transform: translateY(0) rotate(90deg); }
+		}
+	}
+
+	&__line{
+		width: 100%; height: 0.3em;
+		position: relative;
+		border-radius: 1em;
+		background-color: $blue;
+		transform: translateY(-200%);
+		transition: 0.3s;
+
+		&::before, &::after{
+			content:'';
+			width: 100%;height: 100%;
+			border-radius: 1em;
+			background-color: inherit;
+			position: absolute;
+			transition: 0.3s;
+		}
+
+		&::before{
+			transform: translateY(200%);
+		}
+		&::after{
+			transform: translateY(400%);
+		}
+	}
+
+	@media (max-width: $laptop) {
+		display: flex;
+	}
+}

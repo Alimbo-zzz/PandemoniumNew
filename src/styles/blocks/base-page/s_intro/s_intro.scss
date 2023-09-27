@@ -1,0 +1,165 @@
+.s_intro{
+	background: linear-gradient(90deg, #CBCBF7 0%, #FDE3EA 100%);
+  background-size: 200% 200%;
+  padding: 0;
+
+  animation: gradient 5s ease infinite;
+
+  .container{
+  	position: relative;
+  }
+
+.intro{
+	height: 100vh;
+	min-height: 700px;
+	padding: 8em 0;
+	padding-bottom: 2em;
+	@media (min-width: $desktop) {
+		min-height: 750px;
+	}
+
+
+	@media (min-width: $desktop) and (min-height: 850px) {padding-bottom: 4em;}
+	@media (max-width: $desktop) and (min-height: 730px) {padding-bottom: 3em;}
+	@media (max-width: $laptop) and (max-height: 900px) {}
+	@media (max-width: $phone) {}
+
+
+	display: flex;
+	justify-content: space-between;
+
+
+	@media (max-width: $laptop) {
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding-bottom: 1em;
+	}
+
+
+
+	&__logo{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color:$black;
+		pointer-events: none;
+		user-select: none;
+		align-self: center;
+		margin-bottom: calc(100vh/3);
+
+		@media (max-width:$laptop) {
+			margin-bottom: 0;
+		}
+
+		img{
+			position: absolute;
+			width: 100%;height: auto;
+			z-index: 1;
+
+			@media (max-width: $tablet) {
+				width: 80%;
+			}
+			&._1{animation: _1 4s ease  infinite alternate;}
+			&._2{animation: _2 4s ease  infinite alternate;}
+
+		}
+	}
+
+	.main-title{
+		font-family: 'Cinzel-Bold';
+		font-size: 3em;
+		text-transform: uppercase;
+		position: relative;
+		z-index: 5;
+		text-shadow: 0 0 0.3em;
+
+		@media (max-width: $tablet) {
+			font-size: calc(100vw/12);
+		}
+	}
+
+	&__block{
+		max-width: 600px;
+		text-align:center;
+		align-self:flex-end;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+
+
+		@media (max-width: $laptop) {
+			align-self: center;
+		}
+
+	}
+
+
+	&__box{
+		position: relative;
+		margin-bottom: 3em;
+
+		p{
+			position: relative;
+			z-index: 3;
+		}
+
+		.img-t-none{
+			position: absolute;
+			left: 50%;bottom: 0.5em;
+			pointer-events: none;
+			user-select: none;
+			object-fit: contain;
+			width: 80%;
+			transform: translateX(-50%);
+			z-index: 2;
+
+			@media (min-width: $desktop) and (max-height: 850px) {width: 70%;}
+			@media (max-width: $desktop) and (max-height: 730px) {width: 68%;}
+			@media (max-width: $laptop) and (max-height: 900px) {width: 65%;}
+			@media (max-width: $phone) {width: 75%;}
+		}
+	}
+	
+}
+
+
+}
+
+
+
+@keyframes _1 {
+	0%{opacity: 1}
+	100%{
+		transform: translate(5%,5%) rotate(-360deg) scaleY(0.8);
+	}
+}
+
+
+@keyframes _2 {
+	0%{opacity: 1}
+	100%{
+		transform: translate(-5%,-5%) rotate(360deg) scaleY(0.8);
+	}
+}
+
+
+
+
+@keyframes gradient {
+	0%{
+		background-position: 0 50%;
+	}
+	
+	50%{
+		background-position: 100% 50%;
+	}
+
+	100%{
+		background-position: 0 50%;
+	}
+
+}
+

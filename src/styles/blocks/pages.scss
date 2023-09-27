@@ -1,0 +1,30 @@
+
+
+.mainContent{
+	&._page-base{
+		.page-btns_home{display: none;}
+	}
+	&._page-game{
+		.page-btns_game{display: none;}
+		.page-btns_home{display: flex;}
+		.page-btns_lore{display: flex;}
+		.page-btns_bestiary{display: flex;}
+	}
+	&._page-lore{
+		.page-btns_lore{display: none;}
+		.page-btns_home{display: flex;}
+	}
+	&._page-bestiary{
+		.page-btns_bestiary{display: none;}
+		.page-btns_home{display: flex;}
+	}
+
+	&._page-FAQ{
+		.page-btns_game{display: none;}
+		.page-btns_home{display: flex;}
+		.page-btns_lore{display: none;}
+		.page-btns_bestiary{display: none;}
+	}
+
+
+}

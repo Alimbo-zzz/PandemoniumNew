@@ -1,0 +1,94 @@
+
+
+ /* ______________btns_lang */
+
+
+
+
+.btns-lang{
+	display: flex;
+	font-size: 3.5em;
+	position: relative;
+	color:#fff;
+
+
+	&._active{
+		.btns-lang__list{
+			opacity: 1;
+			pointer-events: auto;
+			transform: translate(-50%, 100%);
+		}
+	}
+
+	button{		
+		width: 1.2em;height: 1em;
+		position: relative;
+		border-radius: 0.1em;
+		border:none;
+		cursor: pointer;
+		background-color:transparent;
+		color:inherit;
+
+		svg{
+			width: 100%;height: 100%;
+			position: absolute;
+			left: 50%;top: 50%;
+			transform: translate(-50%, -50%);
+			user-select: none;
+			pointer-events: none;
+		}
+	}
+
+
+	button.btns-lang__select{		
+		border: 2px solid ;
+		background: $blue;
+		svg{width: 80%;height: 80%;	}
+	}
+
+
+	&__list{
+		font-size: 0.9em;
+		position: absolute;
+		bottom: -0.4em;left: 50%;
+		background-color: $blue;
+		border-radius: 0.1em;
+		display: flex;
+		flex-direction: column;
+		transition: 0.3s;
+		border:0.08em solid ;
+
+		transform: translate(-50%, 0%) scaleY(0);
+		opacity: 0;
+		pointer-events: none;
+
+		span{
+			font-size: 0.9em;
+			margin-left: 0.3em;
+			font-family: montserrat;
+			text-transform: uppercase;
+		}
+
+	}
+
+		&__el{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			user-select: none;
+			transition: 0.3s;
+			padding: 0.1em 0.4em;
+			border-bottom: 2px solid ;
+
+			&:last-child{
+				border:none;
+			}
+
+			@media (min-width: $tablet) {
+				&:hover{
+					background-color: #708DE4;
+				}
+			}
+	}
+}
